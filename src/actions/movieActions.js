@@ -28,6 +28,26 @@ export function setMovie(movie) {
     }
 }
 
+function reviewsFetched(reviews) {
+    return {
+        type: actionTypes.FETCH_REVIEW,
+        selectedReview: reviews
+    }
+}
+
+function reviewSet(review) {
+    return {
+        type: actionTypes.SET_REVIEW,
+        selectedReview: review
+    }
+}
+
+export function setReview(review) {
+    return dispatch => {
+        dispatch(reviewSet(review))
+    }
+}
+
 export function fetchMovies() {
     const env = runtimeEnv();
     return dispatch => {
